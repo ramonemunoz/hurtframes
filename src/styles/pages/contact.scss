@@ -1,0 +1,55 @@
+.contact{
+    padding: 0 7%;
+    margin-top: 15px;
+    h1{
+        font-family: proxima-nova, sans-serif;
+        font-weight: 600;
+        color: #000;
+        font-size: 20px;
+    }
+    p{
+        font-family: proxima-nova, sans-serif;
+        font-weight: 400;
+        color: #000;
+        font-size: 14px;
+    }
+    .hf-insta{
+        img,
+        p{
+            display: inline-block;
+        }
+    }
+    form{
+        padding-top: 25px; 
+        input,
+        textarea{
+            border: 1px solid #707070;
+            padding: 15px 20px 15px 20px;
+            font-family: proxima-nova, sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            color: #000;
+        }
+        ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            color: #000;
+        }
+        ::-moz-placeholder { /* Firefox 19+ */
+        color: #000;
+        }
+        :-ms-input-placeholder { /* IE 10+ */
+        color: #000;
+        }
+        :-moz-placeholder { /* Firefox 18- */
+        color: #000;
+        }
+        .btn-submit{
+            width: 260px;
+            background: #fff;
+            border: 1px solid #707070;
+            font-family: proxima-nova, sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            text-align: center;
+        }
+    }
+}

@@ -9,6 +9,7 @@ select {
   border: 1px solid $color-border;
   border-radius: 0;
   max-width: 100%;
+  width: 100%;
 
   &:focus {
     // You should add some focus styles
