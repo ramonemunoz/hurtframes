@@ -31,7 +31,9 @@
   {% endif %}
 
   {% include 'social-meta-tags' %}
-
+  
+  <link rel="stylesheet" href="https://use.typekit.net/gxx6oja.css">
+  {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
   {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
 
   <script>

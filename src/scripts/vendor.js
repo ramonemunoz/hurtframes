@@ -6,7 +6,17 @@
 /*!
  * jquery-2.2.3.min.js
  */
-// =require vendor/jquery-2.2.3.min.js
+// =require vendor/jquery-3.3.1.min.js
+
+/*!
+ * bootstrap.min.js
+ */
+// =require vendor/bootstrap.min.js
+
+/*!
+ * custom.js
+ */
+// =require ./custom.js
 
 // Attempts to preserve comments that likely contain licensing information,
 // even if the comment does not have directives such as `@license` or `/*!`.
