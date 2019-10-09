@@ -14,9 +14,13 @@
         font-size: 14px;
     }
     .hf-insta{
+        a{
+            text-decoration: none;
+        }
         img,
         p{
             display: inline-block;
+
         }
     }
     form{
