@@ -69,11 +69,12 @@
                   </label>
 
                   <select
+                    class="selector-wrapper"
                     id="SingleOptionSelector-{{ forloop.index0 }}"
                     data-single-option-selector
                     data-index="option{{ option.position }}">
                     {% for value in option.values %}
-                      <option
+                      <option name="options"
                         value="{{ value | escape }}"
                         {% if option.selected_value == value %}selected="selected"{% endif %}>
                           {{ value }}
@@ -82,7 +83,12 @@
                   </select>
                 </div>
               {% endfor %}
-            {% endunless %}
+              {% if product.available and product.variants.size > 1 %}
+                {% for option in product.options %}
+                  {% include 'swatch' with option %}
+                {% endfor %}
+              {% endif %}
+                          {% endunless %}
 
             <select name="id" class="no-js" data-product-select>
               {% for variant in product.variants %}

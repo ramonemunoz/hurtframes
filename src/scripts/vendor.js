@@ -4,11 +4,6 @@
 // =require vendor/modernizr.min.js
 
 /*!
- * jquery-2.2.3.min.js
- */
-// =require vendor/jquery-3.3.1.min.js
-
-/*!
  * bootstrap.min.js
  */
 // =require vendor/bootstrap.min.js
