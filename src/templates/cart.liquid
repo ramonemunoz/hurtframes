@@ -1,8 +1,21 @@
-{% if cart.item_count > 0 %}
-  <h1>{{ 'cart.general.title' | t }}</h1>
-
+<header class="header-logo" role="banner">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-6 col-md-3">
+                <a href="/">
+                  <img class="img-fluid" src="{{ 'HF_LOGO.png' | asset_img_url: '1200x' }}" />
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+<br />
+<div class="container cart-item">
+  <div class="row">
+  <div class="col-12">
+  {% if cart.item_count > 0 %}
   <form action="/cart" method="post" novalidate>
-    <table class="responsive-table">
+    <table class="responsive-table table">
       <thead class="small--hide">
         <tr>
           <th colspan="2">{{ 'cart.label.product' | t }}</th>
@@ -35,13 +48,11 @@
 
             </td>
             <td>
-              <a href="{{ item.url }}">{{ item.product.title }}</a>
+              <a class="product-title" href="{{ item.url }}">{{ item.product.title }}</a>
 
               {% unless item.product.has_only_default_variant %}
                 <p>{{ item.variant.title }}</p>
               {% endunless %}
-
-              <p>{{ item.vendor }}</p>
 
               {%- assign property_size = item.properties | size -%}
 
@@ -60,7 +71,7 @@
                 {% endfor %}
               {% endif %}
 
-              <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">
+              <a class="product-remove" href="/cart/change?line={{ forloop.index }}&amp;quantity=0">
                 <small>{{ 'cart.general.remove' | t }}</small>
               </a>
             </td>
@@ -96,33 +107,41 @@
       <textarea name="note" id="CartSpecialInstructions">{{ cart.note }}</textarea>
     {% endif %}
 
-    <p>{{ 'cart.general.subtotal' | t }}</p>
-    <p>{{ cart.total_price | money }}</p>
+    <p class="text-right cart-summary-text">{{ 'cart.general.subtotal' | t }}: {{ cart.total_price | money }}</p>
     {% if cart.total_discounts > 0 %}
       <p>{{ 'cart.general.savings' | t }} {{ cart.total_discounts | money }}</p>
     {% endif %}
-    <p>{{ 'cart.general.shipping_at_checkout' | t }}</p>
-    <input type="submit" name="update" value="{{ 'cart.general.update' | t }}">
-    <input type="submit" name="checkout" class="btn" value="{{ 'cart.general.checkout' | t }}">
+    <p class="text-right cart-summary-text">{{ 'cart.general.shipping_at_checkout' | t }}</p>
+    <input type="submit" name="checkout" class="btn btn-checkout float-right" value="{{ 'cart.general.checkout' | t }}">
+    <input type="submit" name="update" class="btn btn-update float-right" value="{{ 'cart.general.update' | t }}">
   </form>
+  </div>
+  </div>
+</div>
+
+
 {% else %}
-  <h1>{{ 'cart.general.title' | t }}</h1>
+<div class="container cart-empty">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-md-6">
+      {% comment %}
+      Cart empty state
+      {% endcomment %}
+      <div class="supports-cookies">
+        <p>{{ 'cart.general.empty' | t }}</p>
+        <p>{{ 'cart.general.continue_browsing_html' | t }}</p>
+      </div>
 
-  {% comment %}
-  Cart empty state
-  {% endcomment %}
-  <div class="supports-cookies">
-    <p>{{ 'cart.general.empty' | t }}</p>
-    <p>{{ 'cart.general.continue_browsing_html' | t }}</p>
+      {% comment %}
+      Cart no cookies state
+      ---------------------
+      Browser cookies are required to use the cart. If cookies aren't enabled in the
+      browser a message is displayed prompting the user to enable them.
+      {% endcomment %}
+      <div class="supports-no-cookies">
+        <p>{{ 'cart.general.cookies_required' | t }}</p>
+      </div>
+    {% endif %}
+    </div>
   </div>
-
-  {% comment %}
-  Cart no cookies state
-  ---------------------
-  Browser cookies are required to use the cart. If cookies aren't enabled in the
-  browser a message is displayed prompting the user to enable them.
-  {% endcomment %}
-  <div class="supports-no-cookies">
-    <p>{{ 'cart.general.cookies_required' | t }}</p>
-  </div>
-{% endif %}
+</div>

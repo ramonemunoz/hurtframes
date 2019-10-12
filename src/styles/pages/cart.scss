@@ -1,0 +1,74 @@
+.cart-item{
+    margin-bottom: 65px;
+    h1{
+        text-align: center;
+        font-family: proxima-nova, sans-serif;
+        font-weight: 600;
+        font-size: 42px;
+        color: #000;
+        text-transform: uppercase;
+    }
+    p{
+        font-family: proxima-nova, sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        color: #000;
+    }
+    .product-title{
+        font-family: proxima-nova, sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        color: #000;
+    }
+    .product-remove{
+        font-family: proxima-nova, sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        color: #000;
+    }
+    .cart-summary-text{
+        margin-bottom: 10px;
+    }
+    .btn{
+        padding: 5px 40px;;
+    }
+    .btn-checkout{
+        border: 1px solid #000;
+        background: #000;
+        color: #fff;
+    }
+    .btn-update{
+        border: 1px solid #000;
+        background: #fff;
+        color: #000; 
+        margin-right: 5px;; 
+    }
+}
+
+.cart-empty{
+    margin-top: 15%;
+    h1,
+    p{
+        text-align: center;
+        font-family: proxima-nova, sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        color: #000;
+    }
+    h1{
+        font-size: 42px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #000;
+}
+
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #000;
+}
