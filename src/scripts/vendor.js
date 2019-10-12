@@ -9,6 +9,11 @@
 // =require vendor/bootstrap.min.js
 
 /*!
+ * loazad.js
+ */
+// =require vendor/lozad.min.js
+
+/*!
  * custom.js
  */
 // =require ./custom.js
