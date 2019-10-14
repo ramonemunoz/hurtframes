@@ -1,6 +1,15 @@
 $(document).ready(function() {
   console.log('RWH 9!');
 
+  $('.variant-image').click(function() {
+    $('.variant-image').removeClass('variant-selected');
+    $(this).addClass('variant-selected');
+    var variantSrc = $(this).prop('src');
+    var variantData = $(this).data('large');
+    $('.featured-image').attr('src', variantSrc);
+    $('.featured-image').data('large', variantData);
+  });
+
   $('.swatch-element input:radio').change(function() {
     console.log($(this));
     // remove selected from all
@@ -26,7 +35,7 @@ $(document).ready(function() {
         i +
         ".jpg' /> <a href='https://d1m5g212b7abh8.cloudfront.net/PHOTO+GALLERY/download/NLP-edits-" +
         i +
-        ".jpg' download> <img class='download-icon mx-auto d-block img-fluid' src='https://d1m5g212b7abh8.cloudfront.net/download-icon-white.png' /></a>  </div >"
+        ".jpg' download> <img class='download-icon mx-auto d-block img-fluid' src='https://d1m5g212b7abh8.cloudfront.net/download_icon_small.png' /></a>  </div >"
     );
   }
 

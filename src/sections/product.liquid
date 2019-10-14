@@ -20,19 +20,17 @@
       <meta itemprop="brand" content="{{ product.vendor }}">
       <meta itemprop="image" content="{{ featured_image | img_url: '600x600' }}">
       <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
-      <div class="col-md-6 order-2">
+      <div class="col-md-6 featured-container">
         {% if featured_image != blank %}
-          <img class="img-fluid mx-auto d-block" src="{{ featured_image | img_url: '1080x1080' }}" alt="{{ featured_image.alt | escape }}" data-product-featured-image>
+          <img class="featured-image img-fluid mx-auto d-block" src="{{ featured_image | img_url: '1080x1080' }}" alt="{{ featured_image.alt | escape }}" data-product-featured-image>
         {% endif %}
       </div>
-      <div class="col-md-2 order-1">
+      <div class="col-md-2 variant-container">
         {% if product.images.size > 1 %}
           <ul class="variant-images">
             {% for image in product.images %}
               <li>
-                <a href="{{ image.src | img_url: '480x480' }}" data-product-single-thumbnail>
-                  <img src="{{ image.src | img_url: '160x160' }}" alt="{{ image.alt | escape }}">
-                </a>
+                <img class="variant-image" data-large="{{ image.src | img_url: '1080x1080' }}" src="{{ image.src | img_url: '580x580' }}" alt="{{ image.alt | escape }}">
               </li>
             {% endfor %}
           </ul>
