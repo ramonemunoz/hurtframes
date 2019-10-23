@@ -30,7 +30,7 @@
           <ul class="variant-images">
             {% for image in product.images %}
               <li>
-                <img class="variant-image" data-large="{{ image.src | img_url: '1080x1080' }}" src="{{ image.src | img_url: '580x580' }}" alt="{{ image.alt | escape }}">
+                <img class="variant-image" data-large="{{ image.src | img_url: '1080x1080' }}" src="{{ image.src | img_url: '1080x1080' }}" alt="{{ image.alt | escape }}">
               </li>
             {% endfor %}
           </ul>
